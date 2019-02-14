@@ -8,7 +8,7 @@ protocol MyCustomRootViewDelegate: class {
 	func someDelegateMethodThatIsCommonToAllViewVariations()
 }
 
-class MyCustomRootView: UIView {
+class MyCustomRootView: NMView {
 	
 	// MARK: - Variables
 	
@@ -17,14 +17,10 @@ class MyCustomRootView: UIView {
 	
 	// MARK: - Initializers
 	
-	init() {
-		super.init(frame: .zero)
+	override init() {
+		super.init()
 		setUpViews()
 		setUpConstraints()
-	}
-	
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
 	}
 	
 	// MARK: - Custom View Adding Methods

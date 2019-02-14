@@ -6,13 +6,11 @@ import UIKit
 /*
 Thoughts & Concerns
 
-1. default declaration to UIView so that people can just do SubclassViewController: NMViewController
+default declaration to UIView so that people can just do SubclassViewController: NMViewController
 instead of SubclassViewController: NMViewController<UIView>
 
-2. allow only subclasses to use dynamicView to avoid developers breaking demeter
+allow only subclasses to use dynamicView to avoid developers breaking demeter
 (it would also be great if could get Xcode to let you recast "view")
-
-allow subclasses to not need to include "required init?(coder aDecoder: NSCoder)"
 */
 
 class NMViewController<ViewType: UIView>: UIViewController {
@@ -29,6 +27,7 @@ class NMViewController<ViewType: UIView>: UIViewController {
 		super.init(nibName: nil, bundle: nil)
 	}
 
+	@available(*, unavailable)
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 	}

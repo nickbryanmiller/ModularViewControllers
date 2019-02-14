@@ -14,6 +14,7 @@
 		279EC3E8221522B20010FF59 /* MyCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279EC3E7221522B20010FF59 /* MyCustomViewController.swift */; };
 		279EC3EA221523660010FF59 /* MyCustomRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279EC3E9221523660010FF59 /* MyCustomRootView.swift */; };
 		279EC3EC221523AA0010FF59 /* ButtonToColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279EC3EB221523AA0010FF59 /* ButtonToColorVC.swift */; };
+		279EC3EE221616670010FF59 /* NMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279EC3ED221616670010FF59 /* NMView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		279EC3E7221522B20010FF59 /* MyCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomViewController.swift; sourceTree = "<group>"; };
 		279EC3E9221523660010FF59 /* MyCustomRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomRootView.swift; sourceTree = "<group>"; };
 		279EC3EB221523AA0010FF59 /* ButtonToColorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonToColorVC.swift; sourceTree = "<group>"; };
+		279EC3ED221616670010FF59 /* NMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				279EC3D722151F720010FF59 /* NMViewController.swift */,
+				279EC3ED221616670010FF59 /* NMView.swift */,
 				279EC3E7221522B20010FF59 /* MyCustomViewController.swift */,
 				279EC3E9221523660010FF59 /* MyCustomRootView.swift */,
 				279EC3EB221523AA0010FF59 /* ButtonToColorVC.swift */,
@@ -145,6 +148,7 @@
 				279EC3D822151F720010FF59 /* NMViewController.swift in Sources */,
 				279EC3D622151F720010FF59 /* AppDelegate.swift in Sources */,
 				279EC3EC221523AA0010FF59 /* ButtonToColorVC.swift in Sources */,
+				279EC3EE221616670010FF59 /* NMView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
