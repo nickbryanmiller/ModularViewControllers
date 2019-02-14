@@ -13,6 +13,9 @@ class MyCustomViewController: NMViewController<MyCustomRootView>, MyCustomRootVi
 	// MARK: - Lifecycle
 	
 	override func loadCustomView() -> MyCustomRootView? {
+		// Can use this for all the variations of the view.
+		// The view itself can have a custom "Organizer" depending on version desired
+		// that will do all the layout of the subviews
 		let customView = MyCustomRootView()
 		customView.delegate = self
 		return customView

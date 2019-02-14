@@ -13,10 +13,6 @@ instead of SubclassViewController: NMViewController<UIView>
 (it would also be great if could get Xcode to let you recast "view")
 
 allow subclasses to not need to include "required init?(coder aDecoder: NSCoder)"
-
-don't let other classes call "addChild(_ childController: UIViewController)"
-
-Figuring out removing self / remove in custom deinit to avoid leaks
 */
 
 class NMViewController<ViewType: UIView>: UIViewController {
