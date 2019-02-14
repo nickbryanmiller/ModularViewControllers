@@ -31,6 +31,7 @@ class MyCustomViewController: NMViewController<MyCustomRootView>, MyCustomRootVi
 	
 	// MARK: - CustomViewDelegate Methods
 	
+	// think about a view that doesn't transition vc's but triggers some event
 	func someDelegateMethodThatIsCommonToAllViewVariations() {
 		print("hello")
 	}
