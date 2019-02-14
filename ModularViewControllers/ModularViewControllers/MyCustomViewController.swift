@@ -27,7 +27,7 @@ class MyCustomViewController: NMViewController<MyCustomRootView>, MyCustomRootVi
 		})
 		addChild(brownButtonVC, addRootViewBlock: { [weak self] brownButtonView in
 			self?.dynamicView.addBrownButtonVCRootView(brownButtonView)
-		})
+		})		
 	}
 	
 	// MARK: - CustomViewDelegate Methods

@@ -37,6 +37,10 @@ class NMViewController<ViewType: UIView>: UIViewController {
 		super.init(coder: aDecoder)
 	}
 	
+	deinit {
+		removeChildren()
+	}
+	
 	// MARK: - Lifecycle
 	
 	@available(*, unavailable)
@@ -72,20 +76,43 @@ class NMViewController<ViewType: UIView>: UIViewController {
 	
 	func removeChild<SubViewType>(
 		_ child: NMViewController<SubViewType>,
-		willRemoveRootViewBlock: @escaping ((SubViewType) -> Void))
+		willRemoveRootViewBlock: ((SubViewType) -> Void)? = nil)
 	{
-		child.willMove(toParent: nil)
-		willRemoveRootViewBlock(child.dynamicView)
-		child.dynamicView.removeFromSuperview()
-		child.removeFromParent()
+		// remove child vc's if applicable
+		child.removeChildren()
+		
+		// do the rest of the process
+		child.removeFromParent(willRemoveRootViewBlock: { _ in
+			willRemoveRootViewBlock?(child.dynamicView)
+		})
+	}
+	
+	func removeChildren() {
+		children.forEach({ child in
+			if let goodChild = child as? NMViewController<UIView> {
+				goodChild.removeFromParent()
+			} else {
+				print("added a non NMViewController") // which should be impossible
+			}
+		})
 	}
 	
 	// MARK: - Remove Self From Parent ViewController
 	
-	func removeFromParentVC() {
+	private func removeFromParent(willRemoveRootViewBlock: ((UIView) -> Void)? = nil) {
+		// remove child vc's if applicable
+		removeChildren()
+		
+		// do the rest of the process
 		willMove(toParent: nil)
+		willRemoveRootViewBlock?(view)
 		view.removeFromSuperview()
-		removeFromParent()
+		super.removeFromParent()
+	}
+	
+	@available(*, unavailable)
+	override func removeFromParent() {
+		super.removeFromParent()
 	}
 
 }
